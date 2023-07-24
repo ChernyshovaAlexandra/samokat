@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/samokat/static/css/main.ad272876.css",
+    "main.js": "/samokat/static/js/main.17d129d3.js",
+    "static/media/mainBg.png": "/samokat/static/media/mainBg.3c03ee0e220b9a0111b4.png",
+    "static/media/background.jpg": "/samokat/static/media/background.aee4ac9c5df5e80e42af.jpg",
+    "static/media/obstacle2.png": "/samokat/static/media/obstacle2.cd1972ea468a067a6d9b.png",
+    "static/media/ship2.png": "/samokat/static/media/ship2.654b4927fa10d7a042f0.png",
+    "static/media/ship.png": "/samokat/static/media/ship.be4d353b7d2c075e2b55.png",
+    "static/media/Euclid_Circular_A_Italic.ttf": "/samokat/static/media/Euclid_Circular_A_Italic.8a03b1582303832ce315.ttf",
+    "static/media/Euclid_Circular_A_Regular.ttf": "/samokat/static/media/Euclid_Circular_A_Regular.d54600880dc63db716f2.ttf",
+    "static/media/Euclid_Circular_A_Bold.ttf": "/samokat/static/media/Euclid_Circular_A_Bold.b4788f2f8f64a74fe6d6.ttf",
+    "static/media/obstacle.png": "/samokat/static/media/obstacle.f09fd3babd367ac634d6.png",
+    "static/media/logoPink.svg": "/samokat/static/media/logoPink.db4882974621fff13e14b36c3f5d5a1f.svg",
+    "static/media/Logo.svg": "/samokat/static/media/Logo.a4d7b86055406a0c7fa2c241f7d465c2.svg",
+    "index.html": "/samokat/index.html",
+    "static/media/ticket.svg": "/samokat/static/media/ticket.c34b72aeb482938a044a.svg",
+    "static/media/Logout.svg": "/samokat/static/media/Logout.48234a7605ca69f5a7a3eab005406402.svg",
+    "main.ad272876.css.map": "/samokat/static/css/main.ad272876.css.map",
+    "main.17d129d3.js.map": "/samokat/static/js/main.17d129d3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ad272876.css",
+    "static/js/main.17d129d3.js"
+  ]
+}
