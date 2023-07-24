@@ -1,0 +1,21 @@
+.main-screen {
+    margin-top: 72px;
+    h1.game {
+        color: #404040;
+        text-align: center;
+        font-family: "Euclid Circular A";
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        & + p {
+            color: #999;
+            font-family: 'Euclid Circular A';
+            margin-top: 12px;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+    }
+}

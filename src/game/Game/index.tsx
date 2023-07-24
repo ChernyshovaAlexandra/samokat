@@ -1,0 +1,194 @@
+import React, { useContext, useEffect, useState } from 'react';
+import { Container, Stage } from '@pixi/react';
+import { Rectangle } from '@pixi/math';
+import Background from './Background';
+import Ship from './Ship';
+import Obstacle from './Obstacle';
+import './game.scss';
+import { GameContext, ObstacleType } from './GameContext';
+import Message from '../../components/Message';
+import { obstacleTypes } from './game_parametres';
+
+const Game: React.FC = () => {
+    const {
+        isAnimating,
+        setIsAnimating,
+        shipPosition,
+        setIsGameOver,
+        handleStartAnimation,
+        handleStopAnimation,
+        isGameOver,
+    } = useContext(GameContext);
+
+    const [gameObstacles, setGameObstacles] = useState<ObstacleType[]>([]);
+    const [shipRect, setShipRect] = useState(shipPosition);
+    const [timer, setTimer] = useState(30); // 30-second timer
+
+    const addObstacle = () => {
+        const randomTypeIndex = Math.floor(Math.random() * obstacleTypes.length);
+        const obstacleType = obstacleTypes[randomTypeIndex];
+
+        const containerWidth = 320; // Set the container's width here (replace with your actual container width)
+        const minObstacleX = containerWidth * 0.15; // 10% of the container's width
+        const maxObstacleX = containerWidth * 0.65; // 90% of the container's width
+
+        const randomX = Math.random() * (maxObstacleX - minObstacleX) + minObstacleX;
+        const randomY = -obstacleType.height; // Start the obstacle above the stage
+
+        const obstacle: ObstacleType = {
+            x: randomX,
+            y: randomY,
+            width: obstacleType.width,
+            height: obstacleType.height,
+            speed: obstacleType.speed,
+            texture: obstacleType.texture,
+        };
+        setGameObstacles((prevObstacles) => [...prevObstacles, obstacle]);
+    };
+
+    useEffect(() => {
+        if (isAnimating) {
+            const interval = setInterval(addObstacle, 2000); // Add an obstacle every 2 seconds
+            return () => {
+                clearInterval(interval);
+            };
+        }
+    }, [isAnimating]);
+
+    useEffect(() => {
+        const checkCollisions = () => {
+            const shipObj = new Rectangle(
+                shipRect.x,
+                shipRect.y,
+                shipRect.width,
+                shipRect.height
+            );
+
+            for (let i = 0; i < gameObstacles.length; i++) {
+                const obstacle = gameObstacles[i];
+                const obstacleRect = new Rectangle(
+                    obstacle.x,
+                    obstacle.y,
+                    obstacle.width,
+                    obstacle.height
+                );
+
+                const isIntersecting = shipObj.intersects(obstacleRect);
+                if (isIntersecting) {
+                    setIsGameOver(true);
+                    setIsAnimating(false);
+                    break;
+                }
+            }
+        };
+
+        const gameLoop = () => {
+            if (!isAnimating) return;
+            checkCollisions();
+        };
+
+        const animationFrame = requestAnimationFrame(gameLoop);
+
+        return () => {
+            cancelAnimationFrame(animationFrame);
+        };
+    }, [isAnimating, gameObstacles, shipRect, setIsGameOver, setIsAnimating]);
+
+    const handleObstaclePositionChange = (
+        index: number,
+        position: { x: number; y: number }
+    ) => {
+        setGameObstacles((prevObstacles) => {
+            const updatedObstacles = [...prevObstacles];
+            updatedObstacles[index] = {
+                ...updatedObstacles[index],
+                ...position,
+            };
+            return updatedObstacles;
+        });
+    };
+
+    const handleShipPositionChange = (position: { x: number; y: number, width: number, height: number }) => {
+        setShipRect(position);
+    };
+
+    const handleNewGame = () => {
+        setGameObstacles([]); // Clear the obstacles
+        setShipRect(shipPosition); // Reset the ship position
+        setTimer(30); // Reset the timer
+        setIsGameOver(false);
+        setIsAnimating(false);
+    };
+
+    useEffect(() => {
+        if (isAnimating && timer > 0) {
+            const countdown = setInterval(() => {
+                setTimer((prevTimer) => prevTimer - 1);
+            }, 1000);
+
+            return () => {
+                clearInterval(countdown);
+            };
+        }
+    }, [isAnimating, timer]);
+
+    return (
+        <>
+            <div className="relative game_container">
+                <Stage width={320} height={500} options={{ backgroundColor: 0x000000 }}>
+                    <Container>
+                        <Background isAnimating={isAnimating} />
+                        {gameObstacles.map((obstacle, index) => (
+                            <Obstacle
+                                index={index}
+                                onObstaclePositionChange={handleObstaclePositionChange}
+                                key={index}
+                                x={obstacle.x}
+                                y={obstacle.y}
+                                width={obstacle.width}
+                                height={obstacle.height}
+                                speed={obstacle.speed}
+                                texture={obstacle.texture}
+                                isAnimating={isAnimating}
+                            />
+                        ))}
+                        <Ship
+                            shipPosition={shipPosition}
+                            speed={1}
+                            isAnimating={isAnimating}
+                            onShipPositionChange={handleShipPositionChange}
+                        />
+                    </Container>
+                </Stage>
+                {isGameOver && (
+                    <Message
+                        text="Ты проиграл"
+                        position="center"
+                        buttonText="Еще"
+                        onClick={handleNewGame}
+                    />
+                )}
+                {!isGameOver && timer === 0 && (
+                    <Message
+                        text="Ты выиграл"
+                        position="center"
+                        buttonText="Еще"
+                        onClick={handleNewGame}
+                    />
+                )}
+                <p>Время: {timer.toString().padStart(2, '0')}</p>
+
+                <div className="flex">
+                    <button className="btn" onClick={handleStartAnimation}>
+                        Start
+                    </button>
+                    <button className="btn" onClick={handleStopAnimation}>
+                        Stop
+                    </button>
+                </div>
+            </div>
+        </>
+    );
+};
+
+export default Game;

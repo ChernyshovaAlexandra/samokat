@@ -1,0 +1,224 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+$font-family: "Euclid Circular A";
+$base-font-size: 16px;
+$pink: #ff005b;
+$gray: #f2f2f2;
+$grayText: #999;
+@font-face {
+    font-family: "Euclid Circular A";
+    src: url("../fonts/Euclid_Circular_A_Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Euclid Circular A";
+    src: url("../fonts/Euclid_Circular_A_Bold.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Euclid Circular A";
+    src: url("../fonts/Euclid_Circular_A_Italic.ttf") format("truetype");
+    font-weight: normal;
+    font-style: italic;
+}
+$font-family: "Euclid Circular A";
+$base-font-size: 16px;
+$pink: #ff005b;
+.flex {
+    display: flex;
+}
+@mixin btn-styles {
+    -webkit-appearance: none;
+    background: none;
+    outline: none;
+    border: none;
+    padding: 0.75rem 1.25rem;
+    border-radius: 3.125rem;
+    min-width: 21.25rem;
+    margin-top: 1rem;
+    background: $pink;
+    font-family: $font-family;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    color: #fff;
+    &:not(:disabled) {
+        cursor: pointer;
+    }
+    &.white {
+        background: #fff;
+        color: $pink;
+    }
+}
+
+.landing-logo {
+    display: grid;
+    place-items: center;
+    img {
+        width: 135.545px;
+        height: 20px;
+        margin-bottom: 32px;
+        @media screen and (min-width: 1140px) {
+            width: 13.554rem;
+            height: 2rem;
+            margin-bottom: 4.375rem;
+        }
+    }
+}
+
+.btn {
+    @include btn-styles;
+    &:disabled {
+        filter: grayscale(1);
+        opacity: 0.5;
+    }
+}
+
+.container {
+    max-width: 1184px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gamePlay_container {
+    margin: auto;
+    min-width: 20rem;
+    max-width: 30rem;
+    background: rgb(238, 234, 234);
+    padding: 0.625rem;
+    min-height: 40rem;
+    margin-top: 2rem;
+}
+
+.landing {
+    &-menu {
+        margin-top: 0.75rem;
+        color: #fff;
+        text-align: center;
+        font-family: $font-family;
+        font-size: 0.75rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        &-item {
+            cursor: pointer;
+            flex-shrink: 0;
+            text-decoration-line: underline;
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+
+    &-content {
+        flex-direction: column;
+        justify-content: space-between;
+        display: flex;
+        height: 100%;
+        padding: 20px 10px;
+        h1,
+        p {
+            color: #fff;
+            font-family: $font-family;
+            text-align: center;
+        }
+        @media screen and (min-width: 1140px) {
+            padding: 82px 10px 40px;
+        }
+        footer {
+            p {
+                color: #fff;
+                font-family: $font-family;
+                text-align: left;
+                font-size: 10px;
+
+                @media screen and (min-width: 1140px) {
+                    font-size: 0.75rem;
+                }
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+            }
+        }
+    }
+
+    &-container {
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        background: url(../images/mainBg.png) no-repeat center;
+        background-size: cover;
+        &.verified {
+            background: $gray;
+            h1,
+            p,
+            li,
+            div {
+                color: $grayText;
+            }
+        }
+
+        h1 {
+            font-size: 24px;
+            @media screen and (min-width: 1140px) {
+                font-size: 2.8125rem;
+            }
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            margin-bottom: 0.75rem;
+        }
+
+        p {
+            font-size: 14px;
+            @media screen and (min-width: 1140px) {
+                font-size: 1.5rem;
+            }
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+        }
+    }
+
+    &-buttons {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 2.5rem;
+
+        .btn {
+            width: fit-content;
+        }
+    }
+}
+.text {
+    &-center {
+        text-align: center;
+    }
+    &-pink {
+        color: $pink;
+    }
+}
+.rules-btn {
+    margin-top: 40px !important;
+}
+.fullRules {
+    color: $pink;
+    text-decoration: underline;
+    margin: 1rem auto 0;
+    display: block;
+    width: fit-content;
+}
