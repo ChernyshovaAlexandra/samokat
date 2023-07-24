@@ -1,50 +1,93 @@
 .game_nav {
     &-flex {
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 1rem;
+        @media screen and (min-width: 874px) {
+            flex-wrap: nowrap;
+        }
         width: 100%;
         justify-content: space-between;
         > div {
             flex-shrink: 0;
         }
+        .logo {
+            
+            img {
+                width: 94.881px;
+                height: 14px;
+                @media screen and (min-width: 874px) {
+                    width: 176.208px;
+                    height: 26px;
+                }
+            }
+        }
     }
     .tabs {
         gap: 1rem;
+        order: 3;
         align-items: center;
         background: White;
         border-radius: 32px;
+        margin: auto;
         padding: 0;
         height: fit-content;
+
+        @media screen and (min-width: 874px) {
+            order: 2;
+        }
         .tab {
             color: #404040;
+            cursor: pointer;
             text-align: center;
             font-family: "Euclid Circular A";
-            font-size: 18px;
+            font-size: 14px;
             font-style: normal;
             font-weight: 500;
             line-height: normal;
-            padding: 12px 48px;
+            padding: 12px 30px;
             border-radius: 32px;
             background: #fff;
             height: fit-content;
             border: 1px solid #fff;
 
+            @media screen and (min-width: 874px) {
+                padding: 12px 48px;
+                font-size: 18px;
+            }
             &.active {
                 border: 1px solid #ff005b;
+                cursor: default;
             }
         }
     }
     .settings {
-        gap: 2rem;
+        
+        gap: 1rem;
+        order: 2;
+        align-items: center;
         .score,
         .phone,
         .logout {
+            cursor: pointer;
             gap: 1rem;
             color: #ff005b;
             text-align: center;
-            font-family: "Euclid Circular A";
-            font-size: 20px;
+
+            font-size: 14px;
+
             font-style: normal;
             font-weight: 500;
             line-height: normal;
+            transition: all 0.3s ease-in-out;
+
+            @media screen and (min-width: 874px) {
+                font-size: 20px;
+            }
+            &:hover {
+                filter: grayscale(1);
+                transition: all 0.3s ease-in-out;
+            }
         }
     }
 }

@@ -1,0 +1,185 @@
+.landing-container.verified {
+    .user-account {
+        margin-top: 32px;
+        @media screen and (min-width: 874px) {
+            margin-top: 80px;
+        }
+        display: grid;
+        gap: 40px;
+        @media screen and (min-width: 874px) {
+            gap: 80px;
+        }
+        h1 {
+            color: #404040;
+            text-align: center;
+            font-family: Euclid Circular A;
+            font-size: 20px;
+
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            margin-right: auto;
+            margin-left: auto;
+            @media screen and (min-width: 874px) {
+                font-size: 45px;
+                max-width: 897px;
+            }
+        }
+        .timer {
+            color: #ff005b;
+            font-family: Euclid Circular A;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            text-align: center;
+            @media screen and (min-width: 874px) {
+                font-size: 45px;
+            }
+        }
+    }
+    .tickets-section {
+        max-width: 800px;
+        margin: auto;
+        > p {
+            margin-top: 24px;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            color: #404040;
+            @media screen and (min-width: 874px) {
+                font-size: 24px;
+                margin-top: 40px;
+            }
+        }
+        .btn {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            margin: 16px auto 0;
+            width: 100%;
+            @media screen and (min-width: 874px) {
+                margin: 52px auto 0;
+                width: 340px;
+            }
+        }
+        .ticket {
+            background: url(../../assets/images/ticket.svg) no-repeat center;
+            background-size: contain;
+            width: 142.687px;
+            height: 80px;
+            @media screen and (min-width: 874px) {
+                width: 239px;
+                height: 134px;
+            }
+            margin: auto;
+            h3 {
+                color: #fff;
+                text-align: center;
+                font-size: 38.209px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+                @media screen and (min-width: 874px) {
+                    font-size: 64px;
+                }
+            }
+            p {
+                color: #fff;
+                text-align: center;
+                font-size: 14.328px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+                @media screen and (min-width: 874px) {
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+    .ticket-timeline {
+        h2 {
+            color: #404040;
+            text-align: center;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            @media screen and (min-width: 874px) {
+                font-size: 24px;
+            }
+        }
+    }
+    .friends-section {
+        h2 {
+            color: #404040;
+            text-align: center;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            @media screen and (min-width: 874px) {
+                font-size: 24px;
+            }
+        }
+        p {
+            color: #999;
+            margin: 12px auto 0;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            font-size: 14.328px;
+            max-width: 80%;
+            @media screen and (min-width: 874px) {
+                font-size: 16px;
+            }
+        }
+        .badges {
+            margin-top: 28px;
+        }
+        .btn {
+            color: #404040;
+            text-align: center;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            grid-template-columns: auto 24px;
+            width: fit-content;
+            min-width: 340px;
+            margin: 32px auto 0;
+        }
+    }
+    .revenue-story {
+        margin: 32px auto 38px;
+        &-item {
+            display: flex;
+            background: white;
+            border-radius: 14px;
+            padding: 16px 24px;
+
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            h3 {
+                color: #404040;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+                letter-spacing: 0.32px;
+            }
+            p {
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+                flex-shrink: 0;
+            }
+        }
+    }
+}

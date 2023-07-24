@@ -7,13 +7,17 @@ import MainScreen from '../game/MainScreen';
 interface LandingProps {
     setLoginStart: (value: boolean) => void;
     isCodeVerified: boolean;
+    handleLogout: () => void;
+    phoneNumber: string;
+    setActiveTab: (num: number) => void;
+    activeTab: number;
 }
 
 
-const Landing: React.FC<LandingProps> = ({ setLoginStart, isCodeVerified }) => {
+const Landing: React.FC<LandingProps> = ({ setLoginStart, isCodeVerified, handleLogout, phoneNumber, setActiveTab, activeTab }) => {
     const [rules, showRules] = useState(false)
     return (
-        <div className={`landing-container relative ${isCodeVerified ? 'verified' : ''}`}>
+        <div className={`landing-container relative ${isCodeVerified ? 'verified' : ''} ${activeTab === 0 ? 'full' : ''}`}>
             {rules && (
                 <Message
                     text="Правила акции"
@@ -29,14 +33,14 @@ const Landing: React.FC<LandingProps> = ({ setLoginStart, isCodeVerified }) => {
                         <li>Доставляйте заказы в игре и зарабатывайте дополнительные билетики</li>
                         <li>Приглашайте друзей и увеличивайте шансы на победу</li>
                     </ul>
-                    <div className="btn text-center rules-btn" onClick={() => showRules(false)}>Понятно</div>
+                    <div className="btn text-center rules-btn text-white" onClick={() => showRules(false)}>Понятно</div>
                     <a href="" className="fullRules">Полные правила акции</a>
                 </Message>
             )}
             <div className="landing-content container">
                 {isCodeVerified ?
                     <section className="main_content">
-                        <MainScreen />
+                        <MainScreen handleLogout={handleLogout} phoneNumber={phoneNumber} activeTab={activeTab} setActiveTab={setActiveTab} />
                     </section>
                     :
                     <section className="main_content">

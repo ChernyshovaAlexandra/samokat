@@ -7,10 +7,12 @@ import { number } from "prop-types";
 
 interface GameNavigationProps {
     activeTab: number;
-    setActiveTab: (val: number) => void
+    setActiveTab: (val: number) => void;
+    handleLogout: () => void;
+    phoneNumber: string;
 }
 
-const GameNavigation: React.FC<GameNavigationProps> = ({ activeTab, setActiveTab }) => {
+const GameNavigation: React.FC<GameNavigationProps> = ({ activeTab, setActiveTab, handleLogout, phoneNumber }) => {
     const tabs = ['Личный кабинет', 'Игра']
     return (
         <nav className="game_nav">
@@ -19,16 +21,15 @@ const GameNavigation: React.FC<GameNavigationProps> = ({ activeTab, setActiveTab
                     <img src={logo} />
                 </div>
                 <div className="tabs flex">
-                    {/* <div className="tab">Личный кабинет</div>
-                    <div className="tab">Игра</div> */}
                     {tabs.map((tab, id) => (
                         <div className={`tab ${activeTab === id ? 'active' : ''}`} key={id} onClick={() => setActiveTab(id)}>{tab}</div>
                     ))}
                 </div>
                 <div className="settings flex">
                     <div className="score">408 баллов</div>
+                    {/* <div className="phone">{phoneNumber}</div> */}
                     <div className="phone">+7 9** *** ** 07</div>
-                    <div className="logout">
+                    <div className="logout" onClick={() => handleLogout()}>
                         <img src={logout} alt="" />
                     </div>
                 </div>

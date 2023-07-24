@@ -1,0 +1,24 @@
+<svg width="239" height="134" viewBox="0 0 239 134" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1410_32943)">
+<rect width="239" height="134" rx="18" fill="#FF005B"/>
+<path d="M211 -5V139.5" stroke="#F2F2F2" stroke-width="4" stroke-linecap="round" stroke-dasharray="14 14"/>
+<path d="M28 -5V139.5" stroke="#F2F2F2" stroke-width="4" stroke-linecap="round" stroke-dasharray="14 14"/>
+<circle cx="243" cy="111" r="8" fill="#F2F2F2"/>
+<circle cx="243" cy="93" r="8" fill="#F2F2F2"/>
+<circle cx="243" cy="76" r="8" fill="#F2F2F2"/>
+<circle cx="243" cy="58" r="8" fill="#F2F2F2"/>
+<circle cx="243" cy="40" r="8" fill="#F2F2F2"/>
+<circle cx="243" cy="22" r="8" fill="#F2F2F2"/>
+<circle cx="-4" cy="111" r="8" fill="#F2F2F2"/>
+<circle cx="-4" cy="93" r="8" fill="#F2F2F2"/>
+<circle cx="-4" cy="76" r="8" fill="#F2F2F2"/>
+<circle cx="-4" cy="58" r="8" fill="#F2F2F2"/>
+<circle cx="-4" cy="40" r="8" fill="#F2F2F2"/>
+<circle cx="-4" cy="22" r="8" fill="#F2F2F2"/>
+</g>
+<defs>
+<clipPath id="clip0_1410_32943">
+<rect width="239" height="134" rx="18" fill="white"/>
+</clipPath>
+</defs>
+</svg>

@@ -8,10 +8,12 @@ interface LoginProps {
   apiUrl: string;
   setIsCodeVerified: (parametr: boolean) => void;
   isCodeVerified: boolean;
+  phoneNumber: string;
+  setPhoneNumber: (num: string) => void;
+
 }
 
-const Login: React.FC<LoginProps> = ({ apiUrl, setIsCodeVerified, isCodeVerified }) => {
-  const [phoneNumber, setPhoneNumber] = useState('');
+const Login: React.FC<LoginProps> = ({ apiUrl, setIsCodeVerified, isCodeVerified, phoneNumber, setPhoneNumber }) => {
   const [verificationCode, setVerificationCode] = useState('');
   const [token, setToken] = useState('');
   const [isCodeSent, setIsCodeSent] = useState(false);

@@ -81,8 +81,27 @@ $pink: #ff005b;
         opacity: 0.5;
     }
 }
-
+.badge {
+    @include btn-styles;
+    border-radius: 8px;
+    color: #fff !important;
+    text-align: center;
+    font-weight: 500;
+    font-size: 12px;
+    width: fit-content !important;
+    min-width: 0;
+    margin-top: 12px;
+    margin-right: auto;
+    margin-left: auto;
+    &.pink {
+        border-radius: 8px;
+        border: 1px solid #ff005b;
+        background: #f3dfe6;
+        color: #ff005b !important;
+    }
+}
 .container {
+    font-family: $font-family;
     max-width: 1184px;
     width: 100%;
     margin-left: auto;
@@ -157,6 +176,9 @@ $pink: #ff005b;
     &-container {
         width: 100vw;
         height: 100vh;
+        &.full {
+            height: auto;
+        }
         overflow: hidden;
         background: url(../images/mainBg.png) no-repeat center;
         background-size: cover;
@@ -209,7 +231,10 @@ $pink: #ff005b;
         text-align: center;
     }
     &-pink {
-        color: $pink;
+        color: $pink !important;
+    }
+    &-white {
+        color: white !important;
     }
 }
 .rules-btn {
