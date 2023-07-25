@@ -1,12 +1,13 @@
 {
   "files": {
-    "main.css": "/samokat/static/css/main.ad272876.css",
-    "main.js": "/samokat/static/js/main.1428763c.js",
+    "main.css": "/samokat/static/css/main.91b936ea.css",
+    "main.js": "/samokat/static/js/main.1301f580.js",
     "static/media/mainBg.png": "/samokat/static/media/mainBg.3c03ee0e220b9a0111b4.png",
     "static/media/background.jpg": "/samokat/static/media/background.aee4ac9c5df5e80e42af.jpg",
     "static/media/obstacle2.png": "/samokat/static/media/obstacle2.e9986d14142e0e177fca.png",
     "static/media/ship2.png": "/samokat/static/media/ship2.654b4927fa10d7a042f0.png",
     "static/media/ship.png": "/samokat/static/media/ship.3fd32dbae82e3a466d00.png",
+    "static/media/ground.png": "/samokat/static/media/ground.b6f7d3c29b898c0b8be0.png",
     "static/media/obstacle3.png": "/samokat/static/media/obstacle3.2d82db1577205c13194b.png",
     "static/media/Euclid_Circular_A_Italic.ttf": "/samokat/static/media/Euclid_Circular_A_Italic.8a03b1582303832ce315.ttf",
     "static/media/Euclid_Circular_A_Regular.ttf": "/samokat/static/media/Euclid_Circular_A_Regular.d54600880dc63db716f2.ttf",
@@ -17,11 +18,13 @@
     "index.html": "/samokat/index.html",
     "static/media/ticket.svg": "/samokat/static/media/ticket.c34b72aeb482938a044a.svg",
     "static/media/Logout.svg": "/samokat/static/media/Logout.48234a7605ca69f5a7a3eab005406402.svg",
-    "main.ad272876.css.map": "/samokat/static/css/main.ad272876.css.map",
-    "main.1428763c.js.map": "/samokat/static/js/main.1428763c.js.map"
+    "static/media/resume.svg": "/samokat/static/media/resume.a0b5c3c0501b15f12d23d83e351367fa.svg",
+    "static/media/pause.svg": "/samokat/static/media/pause.01559641b1feeb95a7b9acc2a672aa08.svg",
+    "main.91b936ea.css.map": "/samokat/static/css/main.91b936ea.css.map",
+    "main.1301f580.js.map": "/samokat/static/js/main.1301f580.js.map"
   },
   "entrypoints": [
-    "static/css/main.ad272876.css",
-    "static/js/main.1428763c.js"
+    "static/css/main.91b936ea.css",
+    "static/js/main.1301f580.js"
   ]
 }
